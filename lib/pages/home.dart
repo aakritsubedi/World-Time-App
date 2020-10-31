@@ -10,8 +10,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  Map data = {};
+
   @override
   Widget build(BuildContext context) {
+
+    data = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       body: SafeArea(
         child: Center(
@@ -35,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
                 SizedBox(height: 10),
                 Text(
-                  '${widget.title}',
+                  '${data['time']}',
                   style: TextStyle(fontSize: 32),
                 ),
               ],

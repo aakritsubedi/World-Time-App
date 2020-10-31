@@ -70,16 +70,31 @@ void getTime() async {
   }
 ```
 
-- Error Handling 
-using `try...catch` block  
+- Error Handling
+  using `try...catch` block
+
 ```dart
   try {
-    //do something 
+    //do something
   }
   catch (e) {
     print('Error caught $e');
   }
 ```
+
+- Pushing to other routes and sending data
+
+```dart
+    // Redirect to other routes
+    Navigator.pushReplacementNamed(context, '/home', arguments: {
+      'location': instance.location,
+      'time': instance.time,
+      'flag': instance.flag
+    });
+```
+using the data in the receiver route
+declare the Map and initilize it ... `Map data = {};`  
+store the data in the **build** function `data = ModalRoute.of(context).settings.arguments;`
 
 ---
 
