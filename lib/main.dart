@@ -18,7 +18,6 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      // home: MyHomePage(title: 'World Clock App'),
       initialRoute: '/',
       routes: {
         '/' : (context) => Loading(), 
