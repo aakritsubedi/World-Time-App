@@ -53,10 +53,10 @@ class _MyHomePageState extends State<MyHomePage> {
                           }
                         },
                         icon:
-                            Icon(Icons.edit_location, color: Colors.grey[200]),
+                            Icon(Icons.edit_location, color: data['isDay'] ? Colors.grey[700] : Colors.grey[50]),
                         label: Text(
                           'Edit Location',
-                          style: TextStyle(color: Colors.grey[200]),
+                          style: TextStyle(color: data['isDay'] ? Colors.grey[700] : Colors.grey[50]),
                         ))
                   ],
                 ),

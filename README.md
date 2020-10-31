@@ -92,9 +92,34 @@ void getTime() async {
       'flag': instance.flag
     });
 ```
+
 using the data in the receiver route
 declare the Map and initilize it ... `Map data = {};`  
 store the data in the **build** function `data = ModalRoute.of(context).settings.arguments;`
+
+- Updating the time
+  receive the data from **Navigator.pop** in following manner
+
+```dart
+FlatButton.icon(
+  onPressed: () async {
+  dynamic result = await Navigator.pushNamed(context, '/location');
+  if (result != null) {
+    setState(() {
+    data = {
+      'time': result['time'],
+      'location': result['location'],
+      'isDay': result['isDay'],
+      'flag': result['flag']
+    };
+  });
+  }
+  },
+)
+```
+
+### Demo on the World Time App
+![Demo](./screenshots/demo.gif)
 
 ---
 

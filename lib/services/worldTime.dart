@@ -29,7 +29,7 @@ class WorldTime {
         Duration(hours: int.parse(offsetHrs), minutes: int.parse(offsetMin)));
 
     // Set the time
-    isDay = (now.hour > 6 && now.hour < 18) ? true : false;
+    isDay = (now.hour > 6 && now.hour < 20) ? true : false;
     time = DateFormat.jm().format(now);
     }
     catch (e) {
