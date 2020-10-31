@@ -12,7 +12,7 @@ $ flutter create <project_name>
 this will create a sample app...  
 remove all the unnecessary codeblocks and initilize the blank application to get started.  
 
-- initilize your project cleaning up all the unnecessary codebase using materail design ui, that looks like following screenshot.
+- initilize your project cleaning up all the unnecessary codebase using materail design ui, that looks like following screenshot.  
 ![InitialAppScreen](./screenshots/InitialAppScreen.png)
 
 - create a basic layout for different routes you have. 
