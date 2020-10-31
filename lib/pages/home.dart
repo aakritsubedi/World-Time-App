@@ -10,44 +10,55 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   Map data = {};
 
   @override
   Widget build(BuildContext context) {
-
     data = ModalRoute.of(context).settings.arguments;
 
     return Scaffold(
       body: SafeArea(
-        child: Center(
-            child: Column(
-          children: [
-            Row(
-              children: [
-                FlatButton.icon(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/location');
-                    },
-                    icon: Icon(Icons.edit_location),
-                    label: Text('Edit Location'))
-              ],
-            ),
-            Column(
-              children: [
-                Icon(
-                  Icons.watch_later,
-                  size: 100,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  '${data['time']}',
-                  style: TextStyle(fontSize: 32),
-                ),
-              ],
-            )
-          ],
-        )),
+        child: Padding(
+          padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+          child: Center(
+              child: Column(
+            children: [
+              Row(
+                children: [
+                  FlatButton.icon(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/location');
+                      },
+                      icon: Icon(Icons.edit_location),
+                      label: Text('Edit Location'))
+                ],
+              ),
+              Column(
+                children: [
+                  Icon(
+                    Icons.watch_later_outlined,
+                    size: 100,
+                  ),
+                  SizedBox(height: 20),
+                  Text(
+                    '${data['time']}',
+                    style: TextStyle(fontSize: 66),
+                  ),
+                  SizedBox(height: 20),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        '${data['location']}',
+                        style: TextStyle(fontSize: 24, letterSpacing: 2),
+                      ),
+                    ],
+                  )
+                ],
+              )
+            ],
+          )),
+        ),
       ),
     );
   }
