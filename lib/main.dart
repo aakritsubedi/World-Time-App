@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'package:WorldClock/pages/loading.dart';
 import 'package:WorldClock/pages/home.dart';
+import 'package:WorldClock/pages/chooseLocation.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +18,13 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'World Clock App'),
+      // home: MyHomePage(title: 'World Clock App'),
+      initialRoute: '/home',
+      routes: {
+        '/' : (context) => Loading(), 
+        '/home': (context) =>  MyHomePage(title: 'World Clock Application'),
+        '/location': (context) => ChooseLocation()
+      },
     );
   }
 }

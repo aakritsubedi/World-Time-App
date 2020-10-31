@@ -8,8 +8,8 @@ class Loading extends StatefulWidget {
 class _LoadingState extends State<Loading> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text('loading screen...')
+    return SafeArea(
+      child: Scaffold(body: Text('loading screen...')),
     );
   }
 }

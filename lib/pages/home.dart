@@ -17,15 +17,29 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
             child: Column(
           children: [
-            Icon(
-              Icons.watch_later,
-              size: 100,
+            Row(
+              children: [
+                FlatButton.icon(
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/location');
+                    },
+                    icon: Icon(Icons.edit_location),
+                    label: Text('Edit Location'))
+              ],
             ),
-            SizedBox(height: 10),
-            Text(
-              'World Clock App',
-              style: TextStyle(fontSize: 32),
-            ),
+            Column(
+              children: [
+                Icon(
+                  Icons.watch_later,
+                  size: 100,
+                ),
+                SizedBox(height: 10),
+                Text(
+                  '${widget.title}',
+                  style: TextStyle(fontSize: 32),
+                ),
+              ],
+            )
           ],
         )),
       ),
