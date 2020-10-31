@@ -16,48 +16,72 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     data = ModalRoute.of(context).settings.arguments;
 
+    // set background
+    String bgImage = data['isDay'] ? 'day.jpeg' : 'night.jpg';
+    Color bgColor =  data['isDay'] ? Colors.blue[200] : Colors.grey[50];
+
     return Scaffold(
+      backgroundColor: bgColor,
       body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
-          child: Center(
-              child: Column(
-            children: [
-              Row(
-                children: [
-                  FlatButton.icon(
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/location');
-                      },
-                      icon: Icon(Icons.edit_location),
-                      label: Text('Edit Location'))
-                ],
-              ),
-              Column(
-                children: [
-                  Icon(
-                    Icons.watch_later_outlined,
-                    size: 100,
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    '${data['time']}',
-                    style: TextStyle(fontSize: 66),
-                  ),
-                  SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        '${data['location']}',
-                        style: TextStyle(fontSize: 24, letterSpacing: 2),
-                      ),
-                    ],
-                  )
-                ],
-              )
-            ],
+        child: Container(
+          decoration: BoxDecoration(
+              image: DecorationImage(
+            image: AssetImage('assets/$bgImage'),
+            fit: BoxFit.cover,
           )),
+          child: Padding(
+            padding: EdgeInsets.fromLTRB(0, 100, 0, 0),
+            child: Center(
+                child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FlatButton.icon(
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/location');
+                        },
+                        icon: Icon(
+                          Icons.edit_location,
+                          color: Colors.grey[200]
+                        ),
+                        label: Text(
+                          'Edit Location',
+                          style: TextStyle(color: Colors.grey[200]),
+                        ))
+                  ],
+                ),
+                Column(
+                  children: [
+                    SizedBox(height: 20),
+                    Text(
+                      '${data['time']}',
+                      style: TextStyle(
+                          fontSize: 66,
+                          color: data['isDay']
+                              ? Colors.grey[800]
+                              : Colors.grey[50]),
+                    ),
+                    SizedBox(height: 5),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          '${data['location']}',
+                          style: TextStyle(
+                              fontSize: 24,
+                              letterSpacing: 2,
+                              color: data['isDay']
+                                  ? Colors.grey[800]
+                                  : Colors.grey[50]),
+                        ),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            )),
+          ),
         ),
       ),
     );
