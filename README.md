@@ -70,6 +70,17 @@ void getTime() async {
   }
 ```
 
+- Error Handling 
+using `try...catch` block  
+```dart
+  try {
+    //do something 
+  }
+  catch (e) {
+    print('Error caught $e');
+  }
+```
+
 ---
 
 For help getting started with Flutter, view flutter
