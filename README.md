@@ -52,6 +52,24 @@ void getTime() async {
   }
 ```
 
+- getting world time
+  Initilize a seperate class handling all time functionalities and import the class where necessary.
+  Add such services in services folder inside lib directory like [WorldTime Class](./lib/services/worldTime.dart).
+
+```dart
+  import 'package:WorldClock/services/worldTime.dart';
+
+  void setupWorldTime() async {
+    WorldTime instance = WorldTime(location: 'Kathmandu', flag: 'nepal.png', url:'Asia/Kathmandu');
+    await instance.getTime();
+
+    setState(() {
+      time = instance.time;
+    });
+
+  }
+```
+
 ---
 
 For help getting started with Flutter, view flutter
