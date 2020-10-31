@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // home: MyHomePage(title: 'World Clock App'),
-      initialRoute: '/home',
+      initialRoute: '/',
       routes: {
         '/' : (context) => Loading(), 
         '/home': (context) =>  MyHomePage(title: 'World Clock Application'),
